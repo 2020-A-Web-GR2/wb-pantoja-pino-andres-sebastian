@@ -1152,8 +1152,8 @@
         "affectsGlobalScope": false
       },
       "../src/http/http-juego.controller.ts": {
-        "version": "946dc599d1fd829caaaa5aac2b7310c07f72e8701c8601026739310af79a718d",
-        "signature": "67a64ded50e7c66a8272ef5b0ff76357c866441833dd4a4ef9c92c4a1e64c127",
+        "version": "b1f0f52f6cc0422763d26757971e5cd2409e407bc73863c28351273eeb9cd0b2",
+        "signature": "3c6aa75a4e1d7f3346d6c0b07692f1558b42e8ef8763f6b97fd64def6224cdc4",
         "affectsGlobalScope": false
       },
       "../src/http/http-juego.module.ts": {
