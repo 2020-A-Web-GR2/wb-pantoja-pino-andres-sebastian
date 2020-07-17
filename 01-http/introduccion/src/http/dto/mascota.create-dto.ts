@@ -1,12 +1,41 @@
-import { IsAlpha, IsBoolean, IsEmpty, IsNotEmpty, MaxLength, MinLength } from 'class-validator';
+import {
+  IsAlpha,
+  IsBoolean,
+  IsEmpty,
+  IsInt,
+  IsNotEmpty,
+  IsNumber, IsOptional,
+  IsPositive,
+  MaxLength,
+  MinLength,
+} from 'class-validator';
 
 export class MascotaCreateDto{
   @IsAlpha()
-  @MinLength()
-  @MaxLength()
+  @MinLength(3)
+  @MaxLength(60)
   @IsNotEmpty()
-  nombre:string
+  nombre:string = null;
 
-  // @IsBoolean()
-  // @IsEmpty()
+  @IsInt()
+  @IsPositive()
+  @IsNotEmpty()
+  edad: number = null;
+
+  @IsOptional()
+  @IsBoolean()
+  ligada?: boolean = null;
+
+  @IsBoolean()
+  @IsNotEmpty()
+  casada: boolean = null;
+
+  @IsNumber()
+  @IsPositive()
+  @IsNotEmpty()
+  peso: number = null;
+
+
+
+
 }
