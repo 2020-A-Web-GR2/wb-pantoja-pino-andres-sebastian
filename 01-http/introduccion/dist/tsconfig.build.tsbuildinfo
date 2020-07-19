@@ -1786,9 +1786,19 @@
         "signature": "a4862f7f44bb58f7e3e216723a9fc7221cbb9f810c5e200f47849ecf7df57c0d",
         "affectsGlobalScope": false
       },
+      "../src/calculadora/dto/calculadora.sumar-restar-multiplicar-dto.ts": {
+        "version": "fbd4c1d85f40336c984c9f3496e6eed16e4043eb633020e61a09a9ac89a9555a",
+        "signature": "4fd424055b6a32def5f735e310d59a72d3fac84449d2db8a6deb934f68a8d365",
+        "affectsGlobalScope": false
+      },
+      "../src/calculadora/dto/calculadora.dividir-dto.ts": {
+        "version": "9f4d992b4ce715adae1e70d2c21fe7c8d1834850fcbb8571cd22cdc026dfa13f",
+        "signature": "6d409d519bbe38e0681afadc58dee6d2f90289254e4ae776783158f1d6b9ad12",
+        "affectsGlobalScope": false
+      },
       "../src/calculadora/calculadora.controller.ts": {
-        "version": "fc3a5926d7a64a3345ee04d50e104e101f74932d5b92e426c47410143d4760de",
-        "signature": "15f6174489338e54fb9fc9485a5a3afefb132c5d53f7a6f3b25c4ae8b0b98bf3",
+        "version": "526b774d0a21d73c80adffb024d9564f46e52bf1be4406fe9b25fc22f9297367",
+        "signature": "71a8cc6adb67c75f0f23c1cec81565700f1eddb7387881d7c7352992733ee135",
         "affectsGlobalScope": false
       },
       "../src/calculadora/calculadora.module.ts": {
@@ -6890,7 +6900,10 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts",
         "../src/calculadora/calculadora.service.ts",
+        "../src/calculadora/dto/calculadora.dividir-dto.ts",
+        "../src/calculadora/dto/calculadora.sumar-restar-multiplicar-dto.ts",
         "../src/http/http-juego.service.ts"
       ],
       "../src/calculadora/calculadora.module.ts": [
@@ -6910,6 +6923,22 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/calculadora/dto/calculadora.dividir-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/calculadora/dto/calculadora.sumar-restar-multiplicar-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
       ],
       "../src/http/dto/mascota.create-dto.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -11814,6 +11843,8 @@
       "../src/calculadora/calculadora.controller.ts",
       "../src/calculadora/calculadora.module.ts",
       "../src/calculadora/calculadora.service.ts",
+      "../src/calculadora/dto/calculadora.dividir-dto.ts",
+      "../src/calculadora/dto/calculadora.sumar-restar-multiplicar-dto.ts",
       "../src/http/dto/mascota.create-dto.ts",
       "../src/http/http-juego.controller.ts",
       "../src/http/http-juego.module.ts",
