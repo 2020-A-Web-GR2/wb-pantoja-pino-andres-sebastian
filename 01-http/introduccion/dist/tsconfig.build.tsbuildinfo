@@ -1806,8 +1806,23 @@
         "signature": "2b827500b57b30790c8ccc5fc5d18355b6248eca2492bee3b570b72a76821f7c",
         "affectsGlobalScope": false
       },
+      "../src/usuario/usuario.service.ts": {
+        "version": "b5fd6eac19b294e4f2e7e0cd49cea45030e1d77f74966791bbc90fae2443588d",
+        "signature": "280bded6321999aeef0e976627172f337540c5b5e28a16585bfea08d4bfa89c9",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/usuario.controller.ts": {
+        "version": "e5475835a292298dd4030f674ff2907aebbc24aa28da8f16741cbe88e22bbe11",
+        "signature": "0d27a350bf88034552a97cd0226ae3ca13f289b511c269110d8b43a03232a464",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/usuario.module.ts": {
+        "version": "cdb61e7c174204737b95736723dae01a0a07518d3c60ee39e2175b6db2bbbfa6",
+        "signature": "7005737b1d38f6567bef56aa01edb693498a59417bb868074315080282a99b70",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "81ac898ab263c371fc6f21375fc7b295570c257ea65397bb1d796cad97ffe9ab",
+        "version": "059d69857c0347008fac556f06f877267a64ffd4d5be026392bee9d553352aaa",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -6883,7 +6898,8 @@
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/calculadora/calculadora.module.ts",
-        "../src/http/http-juego.module.ts"
+        "../src/http/http-juego.module.ts",
+        "../src/usuario/usuario.module.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -6985,6 +7001,33 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/usuario/usuario.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/usuario/usuario.service.ts"
+      ],
+      "../src/usuario/usuario.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/usuario/usuario.controller.ts",
+        "../src/usuario/usuario.service.ts"
+      ],
+      "../src/usuario/usuario.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -11348,6 +11391,9 @@
       ],
       "../src/http/http-juego.controller.ts": [
         "../src/http/http-juego.service.ts"
+      ],
+      "../src/usuario/usuario.controller.ts": [
+        "../src/usuario/usuario.service.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -11849,7 +11895,10 @@
       "../src/http/http-juego.controller.ts",
       "../src/http/http-juego.module.ts",
       "../src/http/http-juego.service.ts",
-      "../src/main.ts"
+      "../src/main.ts",
+      "../src/usuario/usuario.controller.ts",
+      "../src/usuario/usuario.module.ts",
+      "../src/usuario/usuario.service.ts"
     ]
   },
   "version": "3.9.5"
