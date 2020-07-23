@@ -12,6 +12,7 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const http_juego_module_1 = require("./http/http-juego.module");
 const calculadora_module_1 = require("./calculadora/calculadora.module");
+const usuario_module_1 = require("./usuario/usuario.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -19,6 +20,7 @@ AppModule = __decorate([
         imports: [
             http_juego_module_1.HttpJuegoModule,
             calculadora_module_1.CalculadoraModule,
+            usuario_module_1.UsuarioModule,
         ],
         controllers: [
             app_controller_1.AppController
