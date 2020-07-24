@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/
 import { UsuarioService } from './usuario.service';
 
 @Controller('usuario')
-export class UsuarioController{
+export class  UsuarioController{
   constructor(private  readonly _usuarioService: UsuarioService) {
   }
   public arregloUsuarios = [

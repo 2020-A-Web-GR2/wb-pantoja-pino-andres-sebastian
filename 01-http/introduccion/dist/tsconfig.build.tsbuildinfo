@@ -1797,8 +1797,8 @@
         "affectsGlobalScope": false
       },
       "../src/calculadora/calculadora.controller.ts": {
-        "version": "526b774d0a21d73c80adffb024d9564f46e52bf1be4406fe9b25fc22f9297367",
-        "signature": "71a8cc6adb67c75f0f23c1cec81565700f1eddb7387881d7c7352992733ee135",
+        "version": "9a37b1d0f6d8a918d7714577fe33d1049a2a926b17243e7782940f880da8d9b7",
+        "signature": "1f255bfe83f027585224e347c201a012a1613bc379e839143a6332b1c0141fbf",
         "affectsGlobalScope": false
       },
       "../src/calculadora/calculadora.module.ts": {
@@ -1812,7 +1812,7 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.controller.ts": {
-        "version": "e5475835a292298dd4030f674ff2907aebbc24aa28da8f16741cbe88e22bbe11",
+        "version": "f1bbffbf75ab4c0b6a67fc1b0ae2e631b7c84878714964be3e87db1f7b580e5e",
         "signature": "0d27a350bf88034552a97cd0226ae3ca13f289b511c269110d8b43a03232a464",
         "affectsGlobalScope": false
       },
@@ -2007,7 +2007,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "a3f6c255690ad32096a59032e2efc89c228b6a380c7365edbd9f052d164f8c16",
+        "version": "67a6fb79b3c48e31ec5bc0e2d51e1ee9b8158398e11c42cf539fe0ca8f02bbc6",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
