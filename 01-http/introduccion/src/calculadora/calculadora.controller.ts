@@ -26,14 +26,24 @@ export class CalculadoraController{
   mensajeErrorIngresarDatos = 'Error de ingreso de datos';
 
   @Get('')
-  funciona(): string{
-    return 'funciona'
+  funciona(
+    @Req() req
+  ): string{
+    console.log(typeof  req.signedCookies.puntaje, typeof  req.cookies.token, req.signedCookies.puntaje );
+    return req.signedCookies;
+  }
+  @Get('puntaje')
+  enviarPuntaje(
+    @Req() req
+  ){
+    return `${req.cookies.token}, tu puntaje es ${req.signedCookies.puntaje}`
   }
 
   @Get('sumar')
   @HttpCode(200)
   async sumar( // n1 query n2 query
     @Req() req,
+    @Res() res,
     @Query() parametrosDeRuta
   ){
     if(!this.hayToken(req)){
@@ -57,7 +67,17 @@ export class CalculadoraController{
               Number(numero1),
               Number(numero2)
           );
-        return `${numero1} + ${numero2} = ${resultado}`
+        const mensaje = {
+          resultado: `${numero1} + ${numero2} = ${resultado}`
+        };
+        const nuevoPuntaje : number = this.calcularNuevoPuntaje(resultado, req);
+        if(nuevoPuntaje <= 0){
+          res.cookie('puntaje', 100, {signed: true});
+          mensaje["aviso"] = `${req.cookies.token}, tu puntaje se ha reiniciado a 100`
+        }else{
+          res.cookie('puntaje', nuevoPuntaje, {signed: true});
+        }
+        res.send(mensaje)
       }
     } catch (e) {
       console.log(e);
@@ -70,6 +90,7 @@ export class CalculadoraController{
   @HttpCode(201)
   async restar( // n1 body n2 body
     @Req() req,
+    @Res() res,
     @Body() parametrosDeCuerpo
   ){
     if(!this.hayToken(req)){
@@ -92,7 +113,17 @@ export class CalculadoraController{
             Number(numero1),
             Number(numero2)
           );
-        return `${numero1} - ${numero2} = ${resultado}`
+        const mensaje = {
+          resultado: `${numero1} + ${numero2} = ${resultado}`
+        };
+        const nuevoPuntaje : number = this.calcularNuevoPuntaje(resultado, req);
+        if(nuevoPuntaje <= 0){
+          res.cookie('puntaje', 100, {signed: true});
+          mensaje["aviso"] = `${req.cookies.token}, tu puntaje se ha reiniciado a 100`
+        }else{
+          res.cookie('puntaje', nuevoPuntaje, {signed: true});
+        }
+        res.send(mensaje)
       }
     } catch (e) {
       console.log(e);
@@ -105,6 +136,7 @@ export class CalculadoraController{
   @HttpCode(200)
   async multiplicar( // n1 header n2 header
     @Req() req,
+    @Res() res
   ){
     if(!this.hayToken(req)){
       throw new BadRequestException("Registrese para utilizar la calculadora")
@@ -126,7 +158,17 @@ export class CalculadoraController{
             Number(numero1),
             Number(numero2)
           );
-        return `${numero1} * ${numero2} = ${resultado}`
+        const mensaje = {
+          resultado: `${numero1} + ${numero2} = ${resultado}`
+        };
+        const nuevoPuntaje : number = this.calcularNuevoPuntaje(resultado, req);
+        if(nuevoPuntaje <= 0){
+          res.cookie('puntaje', 100, {signed: true});
+          mensaje["aviso"] = `${req.cookies.token}, tu puntaje se ha reiniciado a 100`
+        }else{
+          res.cookie('puntaje', nuevoPuntaje, {signed: true});
+        }
+        res.send(mensaje)
       }
     } catch (e) {
       console.log(e);
@@ -138,6 +180,7 @@ export class CalculadoraController{
   @HttpCode(201)
   async dividir(  // n1 ruta n2 ruta
     @Req() req,
+    @Res() res,
     @Param() parametrosRuta
   ){
 
@@ -161,7 +204,17 @@ export class CalculadoraController{
             Number(numero1),
             Number(numero2)
           );
-        return `${numero1} / ${numero2} = ${resultado}`
+        const mensaje = {
+          resultado: `${numero1} + ${numero2} = ${resultado}`
+        };
+        const nuevoPuntaje : number = this.calcularNuevoPuntaje(resultado, req);
+        if(nuevoPuntaje <= 0){
+          res.cookie('puntaje', 100, {signed: true});
+          mensaje["aviso"] = `${req.cookies.token}, tu puntaje se ha reiniciado a 100`
+        }else{
+          res.cookie('puntaje', nuevoPuntaje, {signed: true});
+        }
+        res.send(mensaje)
       }
     } catch (e) {
       console.log(e);
@@ -181,6 +234,8 @@ export class CalculadoraController{
       'token', // nombre
       parametrosConsulta.nombre, // valor
     );
+
+    res.cookie('puntaje', 100, {signed: true});
     const mensaje = {
       mensaje: `Bienvenido ${parametrosConsulta.nombre}!` ,
     };
@@ -188,7 +243,11 @@ export class CalculadoraController{
     res.send(mensaje.mensaje); // METODO EXPRESSJS
   }
 
-
+  calcularNuevoPuntaje(resultadoOperacion: number, req): number{
+    const puntajeActual = Number(req.signedCookies.puntaje);
+    const resultadoAbsoluto = Math.abs(resultadoOperacion);
+    return puntajeActual - resultadoAbsoluto
+  }
 
   hayToken(
     req
