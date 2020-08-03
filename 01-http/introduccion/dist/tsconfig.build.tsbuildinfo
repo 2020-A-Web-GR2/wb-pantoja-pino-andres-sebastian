@@ -1797,7 +1797,7 @@
         "affectsGlobalScope": false
       },
       "../src/calculadora/calculadora.controller.ts": {
-        "version": "9a37b1d0f6d8a918d7714577fe33d1049a2a926b17243e7782940f880da8d9b7",
+        "version": "db62b709734f102aeca52009fbbb1873cb3ac9084ec336767bcb35d0930a8c84",
         "signature": "1f255bfe83f027585224e347c201a012a1613bc379e839143a6332b1c0141fbf",
         "affectsGlobalScope": false
       },
@@ -3132,7 +3132,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "b4b255b8d7ee439521d3f34de0484a98d77a630514a12614a536ffb007ac00b7",
+        "version": "8219744efafe74ab8f35a3cdb1d84bd8e3ea8eec443cf4b3e2f305199bf97766",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
