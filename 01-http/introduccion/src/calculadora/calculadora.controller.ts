@@ -114,7 +114,7 @@ export class CalculadoraController{
             Number(numero2)
           );
         const mensaje = {
-          resultado: `${numero1} + ${numero2} = ${resultado}`
+          resultado: `${numero1} - ${numero2} = ${resultado}`
         };
         const nuevoPuntaje : number = this.calcularNuevoPuntaje(resultado, req);
         if(nuevoPuntaje <= 0){
@@ -159,7 +159,7 @@ export class CalculadoraController{
             Number(numero2)
           );
         const mensaje = {
-          resultado: `${numero1} + ${numero2} = ${resultado}`
+          resultado: `${numero1} * ${numero2} = ${resultado}`
         };
         const nuevoPuntaje : number = this.calcularNuevoPuntaje(resultado, req);
         if(nuevoPuntaje <= 0){
@@ -205,7 +205,7 @@ export class CalculadoraController{
             Number(numero2)
           );
         const mensaje = {
-          resultado: `${numero1} + ${numero2} = ${resultado}`
+          resultado: `${numero1} / ${numero2} = ${resultado}`
         };
         const nuevoPuntaje : number = this.calcularNuevoPuntaje(resultado, req);
         if(nuevoPuntaje <= 0){
