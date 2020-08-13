@@ -49,6 +49,7 @@ export class UsuarioEntity{
     type: 'decimal',
     precision: 10,
     scale: 4,
+    nullable: true
   })
   sueldo?: number;
 

@@ -12,13 +12,31 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const http_juego_module_1 = require("./http/http-juego.module");
 const calculadora_module_1 = require("./calculadora/calculadora.module");
+const usuario_module_1 = require("./usuario/usuario.module");
+const typeorm_1 = require("@nestjs/typeorm");
+const usuario_entity_1 = require("./usuario/usuario.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
+            typeorm_1.TypeOrmModule.forRoot({
+                name: 'default',
+                type: 'mysql',
+                host: 'localhost',
+                port: 32769,
+                username: 'mysql-web-clases',
+                password: 'laclaveesunfactorimportante12345',
+                database: 'mysql-web-clases',
+                entities: [
+                    usuario_entity_1.UsuarioEntity
+                ],
+                synchronize: true,
+                dropSchema: true,
+            }),
             http_juego_module_1.HttpJuegoModule,
             calculadora_module_1.CalculadoraModule,
+            usuario_module_1.UsuarioModule,
         ],
         controllers: [
             app_controller_1.AppController
