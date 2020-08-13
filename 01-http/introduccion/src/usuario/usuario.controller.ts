@@ -1,80 +1,117 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Delete,
+  Get,
+  InternalServerErrorException, NotFoundException,
+  Param,
+  Post,
+  Put,
+  Query,
+} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 
 @Controller('usuario')
-export class  UsuarioController{
-  constructor(private  readonly _usuarioService: UsuarioService) {
+export class UsuarioController {
+  constructor(private readonly _usuarioService: UsuarioService) {
   }
+
   public arregloUsuarios = [
     {
       id: 1,
-      nombre: "Andres"
+      nombre: 'Andres',
     },
     {
       id: 2,
-      nombre: "Daniel"
+      nombre: 'Daniel',
     },
     {
       id: 3,
-      nombre: "Analía"
-    }
+      nombre: 'Analía',
+    },
   ];
   public idActual: number = 3;
 
   @Get()
-  mostrarTodos(){
-    return this.arregloUsuarios
+  async mostrarTodos() {
+    try {
+      const response = await this._usuarioService.findAll();
+      return response;
+    } catch (e) {
+      console.log(e);
+      throw new InternalServerErrorException({
+        mensaje: 'Error del servidor',
+      });
+    }
   }
+
+
   @Get('/:idUsuario')
-  mostrarUno(
-    @Param() parametrosDeRuta
-  ){
-    const idUsuario = Number(parametrosDeRuta.idUsuario);
-    const indice = this.arregloUsuarios.findIndex((usuario) =>
-      usuario.id === idUsuario
-    );
-    return this.arregloUsuarios[indice]
+  async mostrarUno(
+    @Param() parametrosDeRuta,
+  ) {
+    let response;
+    try {
+      response = await this._usuarioService.findOne(
+        Number(parametrosDeRuta.idUsuario));
+
+    } catch (e) {
+      console.log(e);
+      throw new BadRequestException({
+        mensaje: 'Usuario no encontrado',
+      });
+    }
+    if (response) {
+      return response;
+    } else {
+      throw new NotFoundException({
+        mensaje: 'Usuario no encontrado',
+      });
+    }
   }
+
   @Post()
-  crearUno(
-    @Body() parametrosDeCuerpo
-  ){
-    const nuevoUsuario = {
-      id: this.idActual + 1,
-      nombre: parametrosDeCuerpo.nombre
-    };
-    this.arregloUsuarios.push(
-      nuevoUsuario
-    );
-    this.idActual += 1;
-    return nuevoUsuario;
+  async crearUno(
+    @Body() parametrosDeCuerpo,
+  ) {
+    try {
+      // TODO: IMPLEMENTAR VALIDACION CON CREATE DTO y ENVIO A CREAR
+
+      const response = await this._usuarioService.createOne(parametrosDeCuerpo);
+      return response;
+    } catch (e) {
+      console.log(e);
+      throw new BadRequestException({
+        mensaje: 'Error validating data',
+      });
+    }
   }
+
   @Put('/:idUsuario')
   editarUno(
     @Param() parametrosDeRuta,
-    @Body() parametrosDeCuerpo
-  ){
+    @Body() parametrosDeCuerpo,
+  ) {
     const idUsuario = Number(parametrosDeRuta.idUsuario);
     const indice = this.arregloUsuarios.findIndex((usuario) =>
-      usuario.id === idUsuario
+      usuario.id === idUsuario,
     );
     this.arregloUsuarios[indice].nombre = parametrosDeCuerpo.nombre;
-    return this.arregloUsuarios[indice]
+    return this.arregloUsuarios[indice];
   }
+
   @Delete('/:idUsuario')
   eliminarUno(
-    @Param() parametrosDeRuta
-  ){
+    @Param() parametrosDeRuta,
+  ) {
     const idUsuario = Number(parametrosDeRuta.idUsuario);
     const indice = this.arregloUsuarios.findIndex((usuario) =>
-      usuario.id === idUsuario
+      usuario.id === idUsuario,
     );
     const usuarioEliminado = this.arregloUsuarios.splice(indice, 1);
-    return usuarioEliminado
+    return usuarioEliminado;
   }
-
-
-
 
 
 }

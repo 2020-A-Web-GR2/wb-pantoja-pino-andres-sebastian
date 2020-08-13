@@ -3112,18 +3112,18 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.entity.ts": {
-        "version": "89788152bbddc938d5bc455991a878c107d7c20af884f9725168fb96c36cbca1",
+        "version": "0ad57e32541bdc92aa8fffab6f73f5cb70c8249d7e07b99ddabc514a4fb41cf5",
         "signature": "470c668f4a68d4f124decf71783888952a885be3caf5dcc071557bddcf196587",
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.service.ts": {
-        "version": "e089a9717fc003df3c3f10f6224f3b6710f488d6d73503dd023c9e80846cf9f3",
-        "signature": "f5083c89926bce01e4f65ef7de0ce24e2640ac835661739c4466ad60d9dd8f70",
+        "version": "a570a61048e92b0ead7a905ebbddc86f11a8ce1da16036305b2d37b1ec8f4b69",
+        "signature": "6e43a9a956305cb09657c36df81d5fbaf1ed6da183619dea4c8fe4d74a4b7cf3",
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.controller.ts": {
-        "version": "046fbf38018f5b1cfbdc314d376ed3398f9b36c2d23ba4e8667039e5e2fd5388",
-        "signature": "0d27a350bf88034552a97cd0226ae3ca13f289b511c269110d8b43a03232a464",
+        "version": "af76602ea6b7cb7bc275356786516ddbda7db80df8f54b1516008e2fc626a395",
+        "signature": "b8cddc317ea790bfa2b6061ee13715e0a9a8d9f6183142c7fd20660d4b1243af",
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.module.ts": {
@@ -3132,7 +3132,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "8219744efafe74ab8f35a3cdb1d84bd8e3ea8eec443cf4b3e2f305199bf97766",
+        "version": "af55febcdac56a0db5191a3cb4479661214c3c615e9b1f9c2c0b89f382754787",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -3319,6 +3319,16 @@
       "../src/main.ts": {
         "version": "67a6fb79b3c48e31ec5bc0e2d51e1ee9b8158398e11c42cf539fe0ca8f02bbc6",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/dto/usuario.create-dto.ts": {
+        "version": "7177b8888ca60631bf0dd728a755fb17af2c452a8afce73f79c13928b7d47500",
+        "signature": "549039ed0b165fada7d4ff842e277cb89b95d880f6844401f1f249a0d02e4e88",
+        "affectsGlobalScope": false
+      },
+      "../src/usuario/dto/usuario.update-dto.ts": {
+        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -10890,6 +10900,21 @@
         "../node_modules/@types/node/util.d.ts",
         "../src/app.module.ts"
       ],
+      "../src/usuario/dto/usuario.create-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/class-validator/types/index.d.ts"
+      ],
+      "../src/usuario/dto/usuario.update-dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../src/usuario/usuario.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -17870,6 +17895,7 @@
         "../src/http/http-juego.service.ts"
       ],
       "../src/usuario/usuario.controller.ts": [
+        "../src/usuario/usuario.entity.ts",
         "../src/usuario/usuario.service.ts"
       ],
       "../src/usuario/usuario.service.ts": [
@@ -18638,6 +18664,8 @@
       "../src/http/http-juego.module.ts",
       "../src/http/http-juego.service.ts",
       "../src/main.ts",
+      "../src/usuario/dto/usuario.create-dto.ts",
+      "../src/usuario/dto/usuario.update-dto.ts",
       "../src/usuario/usuario.controller.ts",
       "../src/usuario/usuario.entity.ts",
       "../src/usuario/usuario.module.ts",

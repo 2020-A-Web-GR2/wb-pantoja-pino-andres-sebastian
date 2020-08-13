@@ -6,13 +6,27 @@ import { UsuarioEntity } from './usuario.entity';
 @Injectable()
 export class UsuarioService {
   constructor(// Se hace la inyección de dependencias
-    @InjectRepository(UsuarioEntity) private usuarioRepository: Repository<UsuarioEntity>
+    @InjectRepository(UsuarioEntity) private usuarioRepository: Repository<UsuarioEntity>,
   ) {
   }
 
-  crearUno(nuevoUsuario: UsuarioEntity){
-    this.usuarioRepository
-      .save(nuevoUsuario)
+
+   findAll(){
+    return this.usuarioRepository.find()
   }
+
+  findOne(id:number){
+    return this.usuarioRepository.findOne(id)
+  }
+
+
+  createOne(newUser) {
+    const savedUser = this.usuarioRepository
+      .save(newUser);
+    return savedUser;
+  }
+
+
+
 
 }
