@@ -26,6 +26,15 @@ export class UsuarioService {
     return savedUser;
   }
 
+  editOne( editedUser){
+    return  this.usuarioRepository.save(editedUser);
+
+  }
+
+  edeleteOne(id: number) {
+    return this.usuarioRepository.delete(id);
+  }
+
 
 
 
