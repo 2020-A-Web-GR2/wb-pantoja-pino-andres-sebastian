@@ -8,13 +8,17 @@ import {
   Param,
   Post,
   Put,
-  Query,
+  Query, Res,
 } from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
+import { tryCatch } from 'rxjs/internal-compatibility';
+import { MascotaService } from '../mascota/mascota.service';
+import { UsuarioEntity } from './usuario.entity';
 
 @Controller('usuario')
 export class UsuarioController {
-  constructor(private readonly _usuarioService: UsuarioService) {
+  constructor(private readonly _usuarioService: UsuarioService,
+              private readonly _mascotaService: MascotaService) {
   }
 
   public arregloUsuarios = [
@@ -88,29 +92,138 @@ export class UsuarioController {
     }
   }
 
-  @Put('/:idUsuario')
-  editarUno(
+  @Put(':idUsuario')
+  async editarUno(
     @Param() parametrosDeRuta,
     @Body() parametrosDeCuerpo,
   ) {
-    const idUsuario = Number(parametrosDeRuta.idUsuario);
-    const indice = this.arregloUsuarios.findIndex((usuario) =>
-      usuario.id === idUsuario,
-    );
-    this.arregloUsuarios[indice].nombre = parametrosDeCuerpo.nombre;
-    return this.arregloUsuarios[indice];
+    try {
+      const id = Number(parametrosDeRuta.idUsuario);
+      const edited = parametrosDeCuerpo;
+      edited.idUsuario = id;
+      console.log(edited);
+
+      // TODO: IMPLEMENTAR VALIDACION CON UPDATE DTO
+
+      const response = await this._usuarioService.editOne(edited);
+      return response;
+    } catch (e) {
+      console.log(e);
+      throw new BadRequestException({
+        mensaje: 'Error validating data',
+      });
+    }
   }
 
-  @Delete('/:idUsuario')
-  eliminarUno(
+
+  @Delete(':idUsuario')
+  async eliminarUno(
     @Param() parametrosDeRuta,
   ) {
-    const idUsuario = Number(parametrosDeRuta.idUsuario);
-    const indice = this.arregloUsuarios.findIndex((usuario) =>
-      usuario.id === idUsuario,
-    );
-    const usuarioEliminado = this.arregloUsuarios.splice(indice, 1);
-    return usuarioEliminado;
+    const id = Number(parametrosDeRuta.idUsuario);
+    try {
+      const response = await this._usuarioService.edeleteOne(id);
+      return {
+        mensaje: `Registro con id: ${id} eliminado`,
+      };
+    } catch (e) {
+      console.log(e);
+      throw new InternalServerErrorException({
+        mensaje: 'Error del servidor',
+      });
+    }
+  }
+
+  @Post('mascota')
+  async crearUsuarioYMascota(
+    @Body() parametrosDeCuerpo
+  ){
+    const usuario = parametrosDeCuerpo.usuario;
+    const mascota = parametrosDeCuerpo.mascota;
+    let usuarioCreado;
+    try {
+      //TODO: VALIDAR CON DTO
+       usuarioCreado = await this._usuarioService.createOne(usuario);
+
+    }catch (e) {
+      console.log(e);
+      throw new InternalServerErrorException({
+        mensaje: 'Error al crear usuario'
+      })
+    }
+    let mascotaCreada;
+    if(usuarioCreado){
+      try {
+        mascota.usuario = usuarioCreado.idUsuario;
+        mascotaCreada = await this._mascotaService.crearNuevaMascota(mascota)
+      }catch (e) {
+        console.log(e)
+        throw new InternalServerErrorException({
+          meensaje: 'Error al crear mascota'
+        })
+      }
+    }
+
+    if (mascotaCreada){
+      return {
+        mascota: mascotaCreada,
+        usuario: usuarioCreado
+      }
+    }else{
+     throw new InternalServerErrorException({
+       mensaje: 'Error al crear mascota'
+     })
+    }
+  }
+
+  @Get('vista/usuario')
+  vistaUsuario(
+    @Res() res
+  ){
+    const nombre = 'Andrés';
+    res.render(
+      'usuario/ejemplo', // nombre de la vista (archivo)
+      { // params de la vista
+        nombre
+    })
+  }
+
+
+  @Get('vista/faq')
+  faq(
+    @Res() res
+  ){
+    const nombre = 'Andrés';
+    res.render(
+      'usuario/faq', // nombre de la vista (archivo)
+      { // params de la vista
+        nombre
+    })
+  }
+
+  @Get('vista/login')
+  login(
+    @Res() res
+  ){
+    const nombre = 'Andrés';
+    res.render(
+      'usuario/login', // nombre de la vista (archivo)
+      { // params de la vista
+        nombre
+    })
+  }
+
+
+  @Get('vista/inicio')
+  inicio(
+    @Res() res
+  ){
+    const nombre = 'Andrés';
+    res.render(
+      'usuario/inicio', // nombre de la vista (archivo)
+      { // params de la vista
+        nombre
+    })
   }
 
 

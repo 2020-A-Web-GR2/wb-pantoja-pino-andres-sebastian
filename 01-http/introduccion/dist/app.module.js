@@ -15,6 +15,10 @@ const calculadora_module_1 = require("./calculadora/calculadora.module");
 const usuario_module_1 = require("./usuario/usuario.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const usuario_entity_1 = require("./usuario/usuario.entity");
+const mascota_module_1 = require("./mascota/mascota.module");
+const vacuna_module_1 = require("./vacuna/vacuna.module");
+const mascota_entity_1 = require("./mascota/mascota.entity");
+const vacuna_entity_1 = require("./vacuna/vacuna.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -29,7 +33,9 @@ AppModule = __decorate([
                 password: 'laclaveesunfactorimportante12345',
                 database: 'mysql-web-clases',
                 entities: [
-                    usuario_entity_1.UsuarioEntity
+                    usuario_entity_1.UsuarioEntity,
+                    mascota_entity_1.MascotaEntity,
+                    vacuna_entity_1.VacunaEntity
                 ],
                 synchronize: true,
                 dropSchema: true,
@@ -37,6 +43,8 @@ AppModule = __decorate([
             http_juego_module_1.HttpJuegoModule,
             calculadora_module_1.CalculadoraModule,
             usuario_module_1.UsuarioModule,
+            mascota_module_1.MascotaModule,
+            vacuna_module_1.VacunaModule,
         ],
         controllers: [
             app_controller_1.AppController
