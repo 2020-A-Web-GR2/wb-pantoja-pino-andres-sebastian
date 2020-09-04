@@ -3332,8 +3332,8 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.controller.ts": {
-        "version": "11a45d12e3868d60b465319e4836bb699eec91d7fb5259f228c1b6c7392ef076",
-        "signature": "9d1f732695f8199e27a0a4e03cca626c3d455d0dfa78b87b2f60e08236c80ecc",
+        "version": "bfa8883ab8b998979c185cda3510ef513f2b2e1f07625c85d9c8d34ed0202c28",
+        "signature": "5b1f7327c55df8eae50bb08331042b095e590085b2aa51bf8c2bb30222316aca",
         "affectsGlobalScope": false
       },
       "../src/mascota/mascota.module.ts": {
@@ -3352,7 +3352,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "a7c0a898aef787ce9d6eadeba22e683619d6632b41825f32200575a5742b3e41",
+        "version": "0aa9a59d41828ad355ee475644640d7709445aa9a65db919ba11b35b49631532",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -19747,7 +19747,27 @@
       "../src/mascota/mascota.service.ts",
       "../src/usuario/dto/usuario.create-dto.ts",
       "../src/usuario/dto/usuario.update-dto.ts",
-      "../src/usuario/usuario.controller.ts",
+      [
+        "../src/usuario/usuario.controller.ts",
+        [
+          {
+            "file": "../src/usuario/usuario.controller.ts",
+            "start": 5189,
+            "length": 17,
+            "messageText": "Duplicate function implementation.",
+            "category": 1,
+            "code": 2393
+          },
+          {
+            "file": "../src/usuario/usuario.controller.ts",
+            "start": 5313,
+            "length": 17,
+            "messageText": "Duplicate function implementation.",
+            "category": 1,
+            "code": 2393
+          }
+        ]
+      ],
       "../src/usuario/usuario.entity.ts",
       "../src/usuario/usuario.module.ts",
       "../src/usuario/usuario.service.ts",

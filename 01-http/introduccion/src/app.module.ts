@@ -28,7 +28,7 @@ import { VacunaEntity } from './vacuna/vacuna.entity';
         VacunaEntity
       ],
       synchronize: true, // actualiza el esquema de la BD
-      dropSchema: true, // vuelve a crear el esquema de la base de datos
+      dropSchema: false, // vuelve a crear el esquema de la base de datos
     }),
     HttpJuegoModule,
     CalculadoraModule,

@@ -1,0 +1,23 @@
+<%- include('../compartido/estilos-generales/estilos-generales-component')%>
+
+
+<h1>Crear</h1>
+<!--unordered list-->
+<%- include('../compartido/menu/menu-component')%>
+
+<form action="/usuario" method="post">
+
+    <label for="nombreID">Nombre: </label>
+    <input id="nombreID" type="text" name="nombre">
+    <br>
+    <label for="apellidoID">Apellido: </label>
+    <input id="apellidoID" type="text" name="apellido">
+    <br>
+    <label for="cedulaID">Cédula: </label>
+    <input id="cedulaID" type="text" name="cedula">
+    <br>
+    <button type="submit">SUBMIT</button>
+    <button type="reset">RESET</button>
+    <button type="button">BUTTON</button>
+
+</form>

@@ -6,8 +6,76 @@
 <%- include('../compartido/menu/menu-component')%>
 
 
-<button onclick="mensajeAlertar()">
-    ALERTAR
-</button>
+<!--<button onclick="mensajeAlertar()">-->
+<!--    ALERTAR-->
+<!--</button>-->
+
+
+<!--=   El igual se utiliza así-->
+<%= "Hola" %>
+<p>
+<%= 15 %>
+</p>
+
+<!--Etiquetas-->
+
+<!--<  % % > -->
+<%const andres = {
+  nombre: "Andres",
+    apellido: "Pantoja",
+    cedula: "17"
+} %>
+
+<% const numero = 25 %>
+<% const mensaje = "Holaaaa" %>
+
+<p> <%= andres.nombre%> </p>
+<p> <%= numero%> </p>
+<p> <%= mensaje%> </p>
+
+<% const arregloNumeros = [1,2,3,4,5]%>
+<ul>
+    <%arregloNumeros.forEach( (numero) => { %>
+
+     <li>
+         <%= numero%>
+     </li>
+
+    <% }) %>
+</ul>
+<div class="container">
+    <a href="/usuario/vista/crear">
+        <button class="btn-link">Crear</button>
+    </a>
+
+    <table class="table">
+        <!--    table row-->
+        <tr>
+            <!--        Table header-->
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">Acciones</th>
+        </tr>
+
+        <% usuarios.forEach((usuario) => { %>
+            <tr>
+                <td><%=usuario.nombre%></td>
+                <td><%=usuario.apellido%></td>
+                <td><%=usuario.cedula%></td>
+                <td>
+                    <button class="btn-info">Ver</button>
+                    <button class="btn-light">Editar</button>
+                    <button class="btn-danger">Eliminar</button>
+                </td>
+
+            </tr>
+        <% })%>
+    </table>
+
+</div>
+
+
+
 
 <%- include('../compartido/funcionalidad-general/funcionalidad-general-component')%>

@@ -136,95 +136,130 @@ export class UsuarioController {
 
   @Post('mascota')
   async crearUsuarioYMascota(
-    @Body() parametrosDeCuerpo
-  ){
+    @Body() parametrosDeCuerpo,
+  ) {
     const usuario = parametrosDeCuerpo.usuario;
     const mascota = parametrosDeCuerpo.mascota;
     let usuarioCreado;
     try {
       //TODO: VALIDAR CON DTO
-       usuarioCreado = await this._usuarioService.createOne(usuario);
+      usuarioCreado = await this._usuarioService.createOne(usuario);
 
-    }catch (e) {
+    } catch (e) {
       console.log(e);
       throw new InternalServerErrorException({
-        mensaje: 'Error al crear usuario'
-      })
+        mensaje: 'Error al crear usuario',
+      });
     }
     let mascotaCreada;
-    if(usuarioCreado){
+    if (usuarioCreado) {
       try {
         mascota.usuario = usuarioCreado.idUsuario;
-        mascotaCreada = await this._mascotaService.crearNuevaMascota(mascota)
-      }catch (e) {
-        console.log(e)
+        mascotaCreada = await this._mascotaService.crearNuevaMascota(mascota);
+      } catch (e) {
+        console.log(e);
         throw new InternalServerErrorException({
-          meensaje: 'Error al crear mascota'
-        })
+          meensaje: 'Error al crear mascota',
+        });
       }
     }
 
-    if (mascotaCreada){
+    if (mascotaCreada) {
       return {
         mascota: mascotaCreada,
-        usuario: usuarioCreado
-      }
-    }else{
-     throw new InternalServerErrorException({
-       mensaje: 'Error al crear mascota'
-     })
+        usuario: usuarioCreado,
+      };
+    } else {
+      throw new InternalServerErrorException({
+        mensaje: 'Error al crear mascota',
+      });
     }
   }
 
   @Get('vista/usuario')
   vistaUsuario(
-    @Res() res
-  ){
+    @Res() res,
+  ) {
     const nombre = 'Andrés';
     res.render(
       'usuario/ejemplo', // nombre de la vista (archivo)
       { // params de la vista
-        nombre
-    })
+        nombre,
+      });
   }
 
 
   @Get('vista/faq')
   faq(
-    @Res() res
-  ){
+    @Res() res,
+  ) {
     const nombre = 'Andrés';
     res.render(
       'usuario/faq', // nombre de la vista (archivo)
       { // params de la vista
-        nombre
-    })
+        nombre,
+      });
   }
 
   @Get('vista/login')
   login(
-    @Res() res
-  ){
+    @Res() res,
+  ) {
     const nombre = 'Andrés';
     res.render(
       'usuario/login', // nombre de la vista (archivo)
       { // params de la vista
-        nombre
-    })
+        nombre,
+      });
   }
 
 
   @Get('vista/inicio')
-  inicio(
-    @Res() res
-  ){
-    const nombre = 'Andrés';
-    res.render(
-      'usuario/inicio', // nombre de la vista (archivo)
-      { // params de la vista
-        nombre
-    })
+  async inicio(
+    @Res() res,
+  ) {
+    let usuarios;
+    try {
+      usuarios = await this._usuarioService.findAll();
+    } catch (error) {
+      throw new InternalServerErrorException('Error encontrando datos');
+    }
+    if (usuarios) {
+      res.render(
+        'usuario/inicio', // nombre de la vista (archivo)
+        { // params de la vista
+
+          usuarios,
+        });
+    } else {
+      throw new NotFoundException('No se encontraron usuarios');
+    }
   }
 
+  @Get('/vista/crear')
+  crearUsuarioVista(
+    @Res() res
+  ){
+    res.render(
+      'usuario/crear'
+    )
+  }
+
+  @Post('/crearDesdeVista')
+  async crearUsuarioVista(
+    @Body() parametrosDeCuerpo,
+  ) {
+    try {
+      // TODO: IMPLEMENTAR VALIDACION CON CREATE DTO y ENVIO A CREAR
+
+      const response = await this._usuarioService.createOne(parametrosDeCuerpo);
+      return response;
+    } catch (e) {
+      console.log(e);
+      throw new BadRequestException({
+        mensaje: 'Error validating data',
+      });
+    }
+  }
 
 }
