@@ -48,6 +48,11 @@
         <button class="btn-link">Crear</button>
     </a>
 
+    <%if (Object.keys(consulta).length > 0){ %>
+       <p>MENSAJE: <%= consulta.mensaje%></p>
+    <% }%>
+
+
     <table class="table">
         <!--    table row-->
         <tr>
@@ -59,14 +64,30 @@
         </tr>
 
         <% usuarios.forEach((usuario) => { %>
+
             <tr>
                 <td><%=usuario.nombre%></td>
                 <td><%=usuario.apellido%></td>
                 <td><%=usuario.cedula%></td>
                 <td>
-                    <button class="btn-info">Ver</button>
-                    <button class="btn-light">Editar</button>
-                    <button class="btn-danger">Eliminar</button>
+
+                    <a href="/usuario/vista/ver/<%= usuario.idUsuario%>">
+                        <button class="btn-info">Ver</button>
+                    </a>
+
+
+                    <a href="/usuario/vista/editar/<%= usuario.idUsuario%>">
+                        <button  class="btn-light">Editar</button>
+                    </a>
+
+
+
+                    <form action="/usuario/eliminarDesdeVista/<%= usuario.idUsuario %>"
+                          method="POST"
+                    >
+                        <button type="submit" class="btn-danger">Eliminar</button>
+                    </form>
+
                 </td>
 
             </tr>

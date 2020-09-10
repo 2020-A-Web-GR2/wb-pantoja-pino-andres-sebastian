@@ -3332,8 +3332,8 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.controller.ts": {
-        "version": "bfa8883ab8b998979c185cda3510ef513f2b2e1f07625c85d9c8d34ed0202c28",
-        "signature": "5b1f7327c55df8eae50bb08331042b095e590085b2aa51bf8c2bb30222316aca",
+        "version": "677098bc1bbe337fd594490ef74b84cf5961e77e017d56ae1cc250a21b2ee0d1",
+        "signature": "94ae883cd53bfaee91f0d7dbbdb9e06711607d95725a60bb8863f047a2318306",
         "affectsGlobalScope": false
       },
       "../src/mascota/mascota.module.ts": {
@@ -11547,6 +11547,7 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/os.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -19747,27 +19748,7 @@
       "../src/mascota/mascota.service.ts",
       "../src/usuario/dto/usuario.create-dto.ts",
       "../src/usuario/dto/usuario.update-dto.ts",
-      [
-        "../src/usuario/usuario.controller.ts",
-        [
-          {
-            "file": "../src/usuario/usuario.controller.ts",
-            "start": 5189,
-            "length": 17,
-            "messageText": "Duplicate function implementation.",
-            "category": 1,
-            "code": 2393
-          },
-          {
-            "file": "../src/usuario/usuario.controller.ts",
-            "start": 5313,
-            "length": 17,
-            "messageText": "Duplicate function implementation.",
-            "category": 1,
-            "code": 2393
-          }
-        ]
-      ],
+      "../src/usuario/usuario.controller.ts",
       "../src/usuario/usuario.entity.ts",
       "../src/usuario/usuario.module.ts",
       "../src/usuario/usuario.service.ts",
