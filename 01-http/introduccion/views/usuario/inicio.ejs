@@ -44,6 +44,8 @@
     <% }) %>
 </ul>
 <div class="container">
+
+
     <a href="/usuario/vista/crear">
         <button class="btn-link">Crear</button>
     </a>
@@ -51,6 +53,18 @@
     <%if (Object.keys(consulta).length > 0){ %>
        <p>MENSAJE: <%= consulta.mensaje%></p>
     <% }%>
+
+    <form action="/usuario/vista/inicio"
+    method="get">
+        <label for="busqueda">Busqueda: </label>
+        <input type="text" name="busqueda" id="busqueda">
+        <button type="submit">Buscar</button>
+
+
+    </form>
+
+
+
 
 
     <table class="table">

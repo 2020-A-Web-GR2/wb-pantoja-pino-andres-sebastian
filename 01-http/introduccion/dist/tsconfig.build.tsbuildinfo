@@ -1142,8 +1142,8 @@
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
-        "signature": "ef022c91ea9e75ab4082f2e881f9c4db7b346be2da706e876b253bebce5e6140",
+        "version": "03df1b15585f94209fde2bd90feac534ff1203cf82ba680026edfdc4d43905b8",
+        "signature": "69fb9711c3d43da3002f4f82610164df3b7d94e31b6f0656925e41b0efac5b85",
         "affectsGlobalScope": false
       },
       "../src/http/http-juego.service.ts": {
@@ -3127,8 +3127,8 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.service.ts": {
-        "version": "1621f101fc4d49d9b518e975cfd7d7ec601556466c2f8bbd1208109a3fa724b5",
-        "signature": "7ef128b6f2c49e51a80f407cd5c68770cfece3bd9dc510785210e51935eb9263",
+        "version": "41d4415d71e24e5bf66db16f5ca058bdff05452ce2d197199e7123ba4d7fce9a",
+        "signature": "7527af77e10d3b3efbacd0cfcd15eaa6dc1fb0bae0f89219aff1a043b462d10c",
         "affectsGlobalScope": false
       },
       "../node_modules/rxjs/internal/SubjectSubscription.d.ts": {
@@ -3332,8 +3332,8 @@
         "affectsGlobalScope": false
       },
       "../src/usuario/usuario.controller.ts": {
-        "version": "677098bc1bbe337fd594490ef74b84cf5961e77e017d56ae1cc250a21b2ee0d1",
-        "signature": "94ae883cd53bfaee91f0d7dbbdb9e06711607d95725a60bb8863f047a2318306",
+        "version": "1f602477e63f70a9853de117164b818f60323a19da28178b99a305d167e994a8",
+        "signature": "33cc095e7018e6fabd9c4f5feacce8bee62a0a1031b6b1aed7105c5e109ebabe",
         "affectsGlobalScope": false
       },
       "../src/mascota/mascota.module.ts": {
@@ -3537,7 +3537,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "c7ac4dd21b7860d75e73abcf3c106efb0d14b1abeb1e8631422c533ab2edda04",
+        "version": "d2a49763f1243fab3689ee84b1fe790ac50f27f17a3fe48a5fc00e389a59175f",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -18929,7 +18929,6 @@
       ],
       "../src/usuario/usuario.controller.ts": [
         "../src/mascota/mascota.service.ts",
-        "../src/usuario/usuario.entity.ts",
         "../src/usuario/usuario.service.ts"
       ],
       "../src/usuario/usuario.entity.ts": [

@@ -42,8 +42,8 @@ export class UsuarioController {
   @Get()
   async mostrarTodos() {
     try {
-      const response = await this._usuarioService.findAll();
-      return response;
+      //const response = await this._usuarioService.findAll();
+     // return response;
     } catch (e) {
       console.log(e);
       throw new InternalServerErrorException({
@@ -223,10 +223,11 @@ export class UsuarioController {
   ) {
     let usuarios;
     try {
-      usuarios = await this._usuarioService.findAll();
+      usuarios = await this._usuarioService.findAll(consulta.busqueda);
     } catch (error) {
       throw new InternalServerErrorException('Error encontrando datos');
     }
+    console.log('Us', usuarios)
     if (usuarios) {
       res.render(
         'usuario/inicio', // nombre de la vista (archivo)
