@@ -2,3 +2,6 @@ body{
     font-family: Arial;
     color: chocolate;
 }
+td, th {
+    border: 1px solid #0b2e13;
+}

@@ -38,7 +38,7 @@ AppModule = __decorate([
                     vacuna_entity_1.VacunaEntity
                 ],
                 synchronize: true,
-                dropSchema: true,
+                dropSchema: false,
             }),
             http_juego_module_1.HttpJuegoModule,
             calculadora_module_1.CalculadoraModule,
